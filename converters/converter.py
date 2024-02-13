@@ -3,4 +3,4 @@ def celciusToFahrenheit(degrees: float) -> float:
 
 
 def fahrenheitToCelcius(degrees: float) -> float:
-    return ((degrees-32)*(5/9))
+    return round(((degrees-32)*(5/9)), 1)
