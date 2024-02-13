@@ -1,6 +1,5 @@
 from vault.vault import Vault
 from discord import Intents, Client, Message
-from commands.commands import reply
 from utils.utils import findTempAndDegree
 from converters.converter import celciusToFahrenheit, fahrenheitToCelcius
 
