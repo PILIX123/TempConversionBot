@@ -1,0 +1,16 @@
+from hvac import Client
+from dotenv import load_dotenv
+from os import getenv
+
+
+class Vault():
+    def __init__(self) -> None:
+        load_dotenv(".env")
+        self.client = Client(
+            url="http://192.168.10.1:8200", token=getenv("token"))
+
+    def get_discord_token(self) -> str:
+        read_response = self.client.secrets.kv.read_secret_version(
+            path="tempConversion")
+        keyValue = read_response['data']['data']['bot']
+        return keyValue
