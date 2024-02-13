@@ -1,8 +1,6 @@
 __pycache__/
 .github/
 .vscode/
-archive/
-alembic/
 htmlcov/
 .coverage/
 pytest.ini
