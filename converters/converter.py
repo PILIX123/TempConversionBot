@@ -1,6 +1,6 @@
-def celciusToFahrenheit(degrees: int) -> float:
+def celciusToFahrenheit(degrees: float) -> float:
     return (degrees*1.8)+32
 
 
-def fahrenheitToCelcius(degrees: int) -> float:
+def fahrenheitToCelcius(degrees: float) -> float:
     return ((degrees-32)*(5/9))

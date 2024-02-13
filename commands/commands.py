@@ -2,14 +2,8 @@ from utils.utils import findTempAndDegree
 from converters.converter import celciusToFahrenheit, fahrenheitToCelcius
 
 
-class Message():
-    author = None
-
-
-def reply(message: Message, user) -> str:
-    if message.author == user:
-        return
-    values = findTempAndDegree(message.content)
+def reply(message: str) -> str:
+    values = findTempAndDegree(message)
     if values == None:
         return
     match values[1].lower():

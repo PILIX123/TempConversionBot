@@ -1,6 +1,8 @@
 from vault.vault import Vault
 from discord import Intents, Client, Message
 from commands.commands import reply
+from utils.utils import findTempAndDegree
+from converters.converter import celciusToFahrenheit, fahrenheitToCelcius
 
 v = Vault()
 
@@ -14,6 +16,15 @@ client = Client(intents=intents)
 
 @client.event
 async def on_message(message: Message):
-    await message.reply(reply(message, client.user), mention_author=False)
+    if message.author == client.user:
+        return
+    values = findTempAndDegree(message)
+    if values == None:
+        return
+    match values[1].lower():
+        case 'f':
+            return f"{values[0]}°F is {fahrenheitToCelcius(values[0])}°C"
+        case 'c':
+            return f"{values[0]}°C is {celciusToFahrenheit(values[0])}°F"
 
 client.run(v.get_discord_token())
