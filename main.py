@@ -17,13 +17,15 @@ client = Client(intents=intents)
 async def on_message(message: Message):
     if message.author == client.user:
         return
-    values = findTempAndDegree(message)
+    values = findTempAndDegree(message.content)
     if values == None:
         return
     match values[1].lower():
         case 'f':
-            return f"{values[0]}°F is {fahrenheitToCelcius(values[0])}°C"
+            await message.reply(f"{values[0]}°F is {fahrenheitToCelcius(values[0])}°C", mention_author=False)
+            return
         case 'c':
-            return f"{values[0]}°C is {celciusToFahrenheit(values[0])}°F"
+            await message.reply(f"{values[0]}°C is {celciusToFahrenheit(values[0])}°F", mention_author=False)
+            return
 
 client.run(v.get_discord_token())
