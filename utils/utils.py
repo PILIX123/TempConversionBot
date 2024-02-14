@@ -1,8 +1,9 @@
 import re
 
 
-def findTempAndDegree(message: str) -> tuple[float, str] | None:
-    v = re.search(r'(-?\d+|\d*[.,]\d+|\d+.\d*)\s*°?\s*(C|F|c|f)\b', message)
-    if v == None:
+def findTempAndDegree(message: str) -> list[tuple[float, str]] | None:
+    v = re.findall(r'(-?\d+|\d*[.,]\d+|\d+.\d*)\s*°?\s*(C|F|c|f)\b', message)
+    if v == []:
         return None
-    return (float(v.groups()[0]), v.groups()[1])
+    t = [(float(va[0]), va[1]) for va in v]
+    return [(float(va[0]), va[1]) for va in v]
