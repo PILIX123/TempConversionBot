@@ -28,3 +28,35 @@ def MPGUSToLPHundredKM(mpg: float) -> float:
 
 def MPGUKToLPHundredKM(mpg: float) -> float:
     return round(282.481/mpg, 2)
+
+
+def milesToKM(miles: float) -> float:
+    return round(miles*1.609, 2)
+
+
+def KMToMiles(km: float) -> float:
+    return round(km/1.609, 2)
+
+
+def yardToM(yard: float) -> float:
+    return round(yard/1.094, 2)
+
+
+def MToYard(m: float) -> float:
+    return round(m*1.094, 2)
+
+
+def inchToCM(inch: float) -> float:
+    return round(inch*2.54, 2)
+
+
+def CMToInch(cm: float) -> float:
+    return round(cm/2.54, 2)
+
+
+def CMToFoot(cm: float) -> float:
+    return round(cm/30.48, 2)
+
+
+def footToCM(ft: float) -> float:
+    return round(ft*30.48, 2)
