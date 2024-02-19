@@ -35,7 +35,7 @@ async def on_message(message: Message):
                 case 'mpg':
                     mes += f"{values[0]} MPG :flag_us: is {MPGUSToMPGUK(values[0])} MPG :flag_gb:.\n{values[0]} MPG :flag_gb: is {MPGUKToMPGUS(values[0])} MPG :flag_us:.\n{values[0]} MPG :flag_us: is {MPGUSToLPHundredKM(values[0])}L/100KM.\n{values[0]} MPG :flag_gb: is {MPGUKToLPHundredKM(values[0])}L/100KM.\n"
                 case _:  # should only trigger with L/100KM
-                    mes += f"{values[0]}L/100KM is {LPHundredKMToMPGUS(values[0])} MPG :flag_us:\n{values[0]}L/100KM is {LPHundredKMToMPGUK(values[0])} MPG :flag_gb:"
+                    mes += f"{values[0]}L/100KM is {LPHundredKMToMPGUS(values[0])} MPG :flag_us:\n{values[0]}L/100KM is {LPHundredKMToMPGUK(values[0])} MPG :flag_gb:\n"
     if listLength != None:
         for values in listLength:
             if values[1].lower() in ["miles", "mi", "mile"]:
